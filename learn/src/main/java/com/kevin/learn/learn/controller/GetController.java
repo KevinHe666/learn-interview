@@ -24,15 +24,15 @@ public class GetController {
      * @param userId
      * @return
      */
-    @RequestMapping(path = "/{city_id}/{user_id}", method = RequestMethod.GET)
-    public Object findUser(@PathVariable("city_id") String cityId,
-                           @PathVariable("user_id") String userId) {
-        params.clear();
-        params.put("cityId", cityId);
-        params.put("userId", userId);
-        return params;
-
-    }
+//    @RequestMapping(path = "/{city_id}/{user_id}", method = RequestMethod.GET)
+//    public Object findUser(@PathVariable("city_id") String cityId,
+//                           @PathVariable("user_id") String userId) {
+//        params.clear();
+//        params.put("cityId", cityId);
+//        params.put("userId", userId);
+//        return params;
+//
+//    }
 
     /**
      * 功能描述:测试GetMapping
