@@ -1,13 +1,14 @@
 package com.kevin.learn.learn;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import javax.annotation.PostConstruct;
-
+/**
+ * @Description:
+ * @Author: Kevin
+ * @Create 2019-07-15 14:22
+ */
 @SpringBootApplication
-@EnableAutoConfiguration
 public class LearnApplication {
 
     public static void main(String[] args) {
@@ -27,64 +28,83 @@ public class LearnApplication {
 
     WaitCondition waitCondition = new WaitCondition();
 
-    /**
-     * 在springboot项目启动的时候所执行的方法
-     * 在bean加载完但用户线程进来之前执行的方法
-     */
-    @PostConstruct
-    public void deadLock() {
-        new Thread(() -> {
-            synchronized (lock1) {
-                try {
-                    System.out.println(Thread.currentThread().getName() + "得到lock1");
-                    Thread.sleep(3000);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                synchronized (lock2) {
-                    System.out.println(Thread.currentThread().getName() + "得到lock2");
-                }
-            }
-        }, "线程1").start();
-
-        new Thread(() -> {
-            synchronized (lock2) {
-                try {
-                    System.out.println(Thread.currentThread().getName() + "得到lock2");
-                    Thread.sleep(3000);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                synchronized (lock1) {
-                    System.out.println(Thread.currentThread().getName() + "得到lock1");
-                }
-            }
-        }, "线程2").start();
-        new Thread(() -> {
-            synchronized (lock2) {
-                try {
-                    System.out.println(Thread.currentThread().getName() + "得到lock2");
-                    Thread.sleep(3000);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                synchronized (lock1) {
-                    System.out.println(Thread.currentThread().getName() + "得到lock1");
-                }
-            }
-        }, "线程3").start();
-        new Thread(() -> {
-            synchronized (lock2) {
-                try {
-                    System.out.println(Thread.currentThread().getName() + "得到lock2");
-                    Thread.sleep(3000);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                synchronized (lock1) {
-                    System.out.println(Thread.currentThread().getName() + "得到lock1");
-                }
-            }
-        }, "线程4").start();
-    }
+//    /**
+//     * 在springboot项目启动的时候所执行的方法
+//     * 在bean加载完但用户线程进来之前执行的方法
+//     */
+//    @PostConstruct
+//    public void deadLock() {
+//        new Thread(() -> {
+//            synchronized (lock1) {
+//                try {
+//                    System.out.println(Thread.currentThread().getName() + "得到lock1");
+//                    Thread.sleep(3000);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//                synchronized (lock2) {
+//                    System.out.println(Thread.currentThread().getName() + "得到lock2");
+//                }
+//            }
+//        }, "线程1").start();
+//
+//        new Thread(() -> {
+//            synchronized (lock2) {
+//                try {
+//                    System.out.println(Thread.currentThread().getName() + "得到lock2");
+//                    Thread.sleep(3000);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//                synchronized (lock1) {
+//                    System.out.println(Thread.currentThread().getName() + "得到lock1");
+//                }
+//            }
+//        }, "线程2").start();
+//        new Thread(() -> {
+//            synchronized (lock2) {
+//                try {
+//                    System.out.println(Thread.currentThread().getName() + "得到lock2");
+//                    Thread.sleep(3000);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//                synchronized (lock1) {
+//                    System.out.println(Thread.currentThread().getName() + "得到lock1");
+//                }
+//            }
+//        }, "线程3").start();
+//        new Thread(() -> {
+//            synchronized (lock2) {
+//                try {
+//                    System.out.println(Thread.currentThread().getName() + "得到lock2");
+//                    Thread.sleep(3000);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//                synchronized (lock1) {
+//                    System.out.println(Thread.currentThread().getName() + "得到lock1");
+//                }
+//            }
+//        }, "线程4").start();
+//
+//    }
+//
+//    @PostConstruct
+//    public void visualVm() throws InterruptedException {
+//        Map<Integer, Integer> map = new HashMap();
+//        int i = 0;
+//        for (int j = 0; j < 1000; j++) {
+//            Thread.sleep(100000);
+//            while (i < 2000000) {
+//                i++;
+//                try {
+//                    map.put(i, i);
+//                } catch (OutOfMemoryError e) {
+//                    e.printStackTrace();
+//                    break;
+//                }
+//            }
+//        }
+//    }
 }
