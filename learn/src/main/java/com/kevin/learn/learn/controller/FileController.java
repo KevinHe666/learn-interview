@@ -1,5 +1,7 @@
 package com.kevin.learn.learn.controller;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,17 +20,25 @@ import java.util.UUID;
  * @Create 2019-07-16 17:34
  */
 @Controller
+@PropertySource({"classpath:application.properties"})
 public class FileController {
-    private static final String filePath = "/Users/kevin/Documents/CE/WorkSpace/learn-interview/learn/src/main/resources/static/images/";
+    /**
+     * 不要硬编码 都配置好文件
+     */
+    @Value("${web.file.path}")
+    private String filePath;
 
     @RequestMapping(value = "upload")
     @ResponseBody
     public String upload(@RequestParam("head_img") MultipartFile file, HttpServletRequest request) {
 
         String name = request.getParameter("name");
+        String intern = name.intern();
+        System.out.println(intern);
         System.out.println("用户名:" + name);
         //获取文件名
         String fileName = file.getOriginalFilename();
+        System.out.println("上传的文件名是: " + fileName);
         System.out.println("上传的文件名是: " + fileName);
 
         //获取文件的后缀名

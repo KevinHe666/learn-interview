@@ -1,6 +1,8 @@
 package com.kevin.learn.learn.controller;
 
+import com.kevin.learn.learn.domain.ServerSettings;
 import com.kevin.learn.learn.domain.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -46,7 +48,7 @@ public class GetController {
         params.clear();
         params.put("from", from);
         params.put("size", size);
-
+        System.out.println("111热部署222HAHAH");
         return params;
     }
 
@@ -102,5 +104,13 @@ public class GetController {
         String id = request.getParameter("id");
         params.put("id", id);
         return params;
+    }
+
+    @Autowired
+    private ServerSettings serverSettings;
+
+    @GetMapping("/v1/test_properties")
+    public Object testProperties(HttpServletRequest request) {
+        return serverSettings;
     }
 }

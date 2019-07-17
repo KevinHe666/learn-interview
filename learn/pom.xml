@@ -44,7 +44,7 @@
         <!--            <groupId>org.springframework.boot</groupId>-->
         <!--            <artifactId>spring-boot-starter-thymeleaf</artifactId>-->
         <!--        </dependency>-->
-        <!--        热部署-->
+        <!--  生产环境不要开 热部署-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
