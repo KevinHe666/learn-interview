@@ -26,6 +26,7 @@ public class User {
     private Date createTime;
     private String phone;
 
+
 //    public User(int age, String pwd, String name, Date createTime) {
 //        this.age = age;
 //        this.pwd = pwd;

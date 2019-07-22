@@ -25,16 +25,16 @@ public class UserController {
      *
      * @return
      */
-    @RequestMapping(value = "add")
-    public Object add() {
-        User user = new User();
-        user.setAge(1);
-        user.setCreateTime(new Date());
-        user.setName("kk");
-        user.setPhone("123123");
-        userService.add(user);
-        return "ok";
-    }
+//    @RequestMapping(value = "add")
+//    public Object add() {
+//        User user = new User();
+//        user.setAge(1);
+//        user.setCreateTime(new Date());
+//        user.setName("kk");
+//        user.setPhone("123123");
+//        userService.add(user);
+//        return "ok";
+//    }
 
     /**
      * 测试事物
