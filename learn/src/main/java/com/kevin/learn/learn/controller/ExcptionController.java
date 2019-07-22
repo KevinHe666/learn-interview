@@ -17,13 +17,13 @@ import java.util.Date;
  */
 @RestController
 public class ExcptionController {
-    @RequestMapping("/api/v1/text_excption")
-    @ExceptionHandler(value = Exception.class)
-    public Object excption() {
-        //不友好的异常
-        int s = 1 / 0;
-        return new User(11, "123123", "100000", new Date());
-    }
+//    @RequestMapping("/api/v1/text_excption")
+//    @ExceptionHandler(value = Exception.class)
+//    public Object excption() {
+//        //不友好的异常
+//        int s = 1 / 0;
+//        return new User(11, "123123", "100000", new Date());
+//    }
 
     @RequestMapping("/api/v1/text_excption2")
     public Object myExcption() {

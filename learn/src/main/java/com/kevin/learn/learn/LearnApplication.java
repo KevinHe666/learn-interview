@@ -1,8 +1,10 @@
 package com.kevin.learn.learn;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 
 import javax.servlet.MultipartConfigElement;
@@ -13,11 +15,14 @@ import javax.servlet.MultipartConfigElement;
  * @Create 2019-07-15 14:22
  */
 @SpringBootApplication
+@ServletComponentScan
+@MapperScan(value = "com.kevin.learn.learn.mapper")
 public class LearnApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(LearnApplication.class, args);
     }
+
 
     @Bean
     public MultipartConfigElement multipartConfigElement() {

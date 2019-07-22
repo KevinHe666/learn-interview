@@ -15,6 +15,7 @@ import java.util.Date;
  */
 @Data
 public class User {
+    private int id;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private int age;
     @JsonIgnore
@@ -23,11 +24,12 @@ public class User {
     private String name;
     @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss", locale = "zh", timezone = "GMT+8")
     private Date createTime;
+    private String phone;
 
-    public User(int age, String pwd, String name, Date createTime) {
-        this.age = age;
-        this.pwd = pwd;
-        this.name = name;
-        this.createTime = createTime;
-    }
+//    public User(int age, String pwd, String name, Date createTime) {
+//        this.age = age;
+//        this.pwd = pwd;
+//        this.name = name;
+//        this.createTime = createTime;
+//    }
 }

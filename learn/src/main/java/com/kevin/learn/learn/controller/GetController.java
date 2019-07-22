@@ -3,6 +3,7 @@ package com.kevin.learn.learn.controller;
 import com.kevin.learn.learn.domain.ServerSettings;
 import com.kevin.learn.learn.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.Ordered;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -112,5 +113,17 @@ public class GetController {
     @GetMapping("/v1/test_properties")
     public Object testProperties(HttpServletRequest request) {
         return serverSettings;
+    }
+
+    /**
+     * 测试拦截器的url
+     *
+     * @return
+     */
+    @GetMapping(value = "/api2/v1/account")
+    public Object account() {
+        System.out.println("controller===>account");
+        params.put("money", "1000");
+        return params;
     }
 }
