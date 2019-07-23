@@ -6,7 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
+import org.springframework.jms.annotation.EnableJms;
 
+import javax.jms.Queue;
 import javax.servlet.MultipartConfigElement;
 
 /**
@@ -17,11 +19,13 @@ import javax.servlet.MultipartConfigElement;
 @SpringBootApplication
 @ServletComponentScan
 @MapperScan(value = "com.kevin.learn.learn.mapper")
+@EnableJms //开启支持jms
 public class LearnApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(LearnApplication.class, args);
     }
+
 
 
     @Bean
