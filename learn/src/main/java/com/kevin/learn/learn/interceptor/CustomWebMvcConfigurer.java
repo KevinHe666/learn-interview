@@ -15,7 +15,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @Create 2019-07-18 17:32
  */
 @Configuration
-public class CustomWebMvcConfigurer implements WebMvcConfigurer {
+public class CustomWebMvcConfigurer implements WebMvcConfigurer{
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         //拦截的指定路径 /*/**拦截全部

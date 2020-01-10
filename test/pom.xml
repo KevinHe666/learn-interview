@@ -46,6 +46,14 @@
             <artifactId>commons-dbcp</artifactId>
             <version>1.2.2</version>
         </dependency>
+        <!--        zookeeper-->
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>3.4.13</version>
+        </dependency>
+        <!--        dubbo-->
+
         <!--quartz-->
         <dependency>
             <groupId>org.quartz-scheduler</groupId>

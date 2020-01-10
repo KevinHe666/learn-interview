@@ -1,6 +1,10 @@
 package com.kevin.test.concurrent;
 
+import com.kevin.test.concurrent.lock.mylock.MyLock;
+
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @Description:线程不安全操作代码示例
@@ -13,11 +17,18 @@ public class UnSafeThread {
 
     private static CountDownLatch countDownLatch = new CountDownLatch(10);
 
+    private static Lock reentrantLock=new ReentrantLock();
+
+    private static Lock lock = new MyLock();
+
     /**
      * 每次调用的时候对这个num进行++的操作
      */
     public static void inCreate() {
+        lock.lock();
+        ;
         num++;
+        lock.unlock();
     }
 
     public static void main(String[] args) {
