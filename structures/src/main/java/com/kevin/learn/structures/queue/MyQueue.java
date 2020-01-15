@@ -40,4 +40,13 @@ public class MyQueue {
         elements = newArr;
         return element;
     }
+
+    /**
+     * 判断queue是否为空
+     *
+     * @return
+     */
+    public boolean isEmpty() {
+        return elements.length == 0;
+    }
 }
