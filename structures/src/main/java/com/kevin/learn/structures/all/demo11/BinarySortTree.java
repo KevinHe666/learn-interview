@@ -96,7 +96,7 @@ public class BinarySortTree {
 	
 	/**
 	 * 删除一颗树中最小的节点
-	 * @param right
+	 * @param node
 	 * @return
 	 */
 	private int deleteMin(Node node) {
