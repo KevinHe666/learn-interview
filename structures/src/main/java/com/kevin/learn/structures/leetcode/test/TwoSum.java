@@ -18,7 +18,9 @@ import java.util.HashMap;
  **/
 public class TwoSum {
     public static void main(String[] args) {
-
+        int[] nums = new int[]{2, 7, 11, 15};
+        int[] ints = twoSum(nums, 9);
+        System.out.println(Arrays.toString(ints));
     }
 
     /**
@@ -26,7 +28,7 @@ public class TwoSum {
      * @param target
      * @return
      */
-    public int[] twoSum(int[] nums, int target) {
+    public static int[] twoSum(int[] nums, int target) {
         //暴力可以两次循环用hashmap也可以
         HashMap<Integer, Integer> map = new HashMap<>();
         //循环处理这个数组
@@ -37,10 +39,8 @@ public class TwoSum {
                 return new int[]{map.get(target - nums[i]), i};
             }
             //将nums的值和下标分别放入的key和value中
-            map.put(i, nums[i]);
+            map.put(nums[i], i);
         }
-
-
         //如果没有返回一个数
         return new int[]{-1};
     }
