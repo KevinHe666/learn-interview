@@ -13,6 +13,8 @@ public class TestBinarySearch {
         int i = binarySearch(arr, 0);
         System.out.println("所要查找的元素的下标位置是: " + i);
     }
+    //拓展一个双指针查找
+
 
     /**
      * @param arr    目标数组
