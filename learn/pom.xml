@@ -5,7 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>dubbo</module>
-        <module>user-service</module>
+        <module>designmode</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
