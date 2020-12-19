@@ -1,15 +1,6 @@
-######################################################################
-# Build Tools
-
-.gradle
-/build/
-!gradle/wrapper/gradle-wrapper.jar
-
 target/
 !.mvn/wrapper/maven-wrapper.jar
-
-######################################################################
-# IDE
+.mvn/
 
 ### STS ###
 .apt_generated
@@ -24,23 +15,16 @@ target/
 *.iws
 *.iml
 *.ipr
+*.log
+*.log.*
+/logs/*
 
 ### NetBeans ###
 nbproject/private/
-build/*
+build/
 nbbuild/
 dist/
 nbdist/
 .nb-gradle/
 
-######################################################################
-# Others
-*.log
-*.xml.versionsBackup
-
-!*/build/*.java
-!*/build/*.html
-!*/build/*.xml
-
-.idea/
-target/
+.DS_Store
